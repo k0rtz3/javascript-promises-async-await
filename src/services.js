@@ -11,3 +11,13 @@ export function fetchBooks() {
     .then((books) => books)
     .catch((error) => console.error(error));
 }
+
+export async function asyncFetchMovies() {
+  try {
+    const response = await fetch("./data/movies.json");
+    const results = await response.json();
+    return results;
+  } catch (error) {
+    console.log(error);
+  }
+}
